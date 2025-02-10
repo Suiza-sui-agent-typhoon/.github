@@ -10,7 +10,7 @@ SuiZa is an innovative fitness platform developed on the Sui blockchain, leverag
 
 ## Features
 
-#### Privacy-Preserving Health Data Storage 🔒
+### Privacy-Preserving Health Data Storage 🔒
 - **On-Chain Commitment, Off-Chain Data**: User health metrics are stored securely using zkCircom circuits, ensuring privacy and security.
 - **Zero-Knowledge Proof Verification**: Users can selectively share health metrics without exposing full data.
 - **Secure & Private Health Tracking**: Data remains private unless explicitly shared with a verified proof.
