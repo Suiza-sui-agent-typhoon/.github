@@ -10,6 +10,11 @@ SuiZa is an innovative fitness platform developed on the Sui blockchain, leverag
 
 ## Features
 
+#### Privacy-Preserving Health Data Storage 🔒
+- **On-Chain Commitment, Off-Chain Data**: User health metrics are stored securely using zkCircom circuits, ensuring privacy and security.
+- **Zero-Knowledge Proof Verification**: Users can selectively share health metrics without exposing full data.
+- **Secure & Private Health Tracking**: Data remains private unless explicitly shared with a verified proof.
+
 ### AI-Driven Personalization with Eliza Agents 🤖
 - **Personalized Fitness Guidance:** Eliza Agents provide tailored fitness advice, nutritional guidance, and motivational support based on individual user preferences.
 - **Content Generation:** These agents dynamically generate engaging content such as workout tips, health blogs, and motivational posts, enhancing user engagement.
@@ -25,6 +30,80 @@ SuiZa is an innovative fitness platform developed on the Sui blockchain, leverag
 ### AI Companion Profiles 🌟
 - **Engaging AI Personalities:** Features AI companions like "Amelia Soga" and "Henry Cavill" who engage users through fan battles, fitness challenges, and social interactions.
 - **Community Building:** These AI profiles foster a sense of community and encourage social interactions within the platform.
+
+
+## Suiza Flow Diagram
+
+              +--------------------------------------+
+              |   User Connects                     |
+              |   (Socials -> X, Google)           |
+              |   Gears -> Fitness, AR             |
+              +--------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  zkCircom Circuit for Health Data Privacy      |
+    |  - Calculate Poseidon hash of health data     |
+    |  - Store only hash & object ID on Sui         |
+    |  - Keep raw health data off-chain             |
+    +------------------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  Zero-Knowledge Proof (ZKP) Generation         |
+    |  - User selects data to share (e.g. temp)     |
+    |  - Generates proof with zkCircom circuit      |
+    |  - Public inputs: Commitment, index, value   |
+    |  - Verifier checks proof against Sui storage |
+    +------------------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  Health Data Verification & Sharing           |
+    |  - Requester verifies ZKP before accessing   |
+    |  - Data remains private unless shared        |
+    +------------------------------------------------+
+                           |
+                           v
+              +--------------------------------------+
+              |    Eliza/Sui Agentic Wallets        |
+              |    (Managed via Eliza Sui Plugin)  |
+              |    (User-defined spending policies) |
+              +--------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  Eliza Agent (Agent 1)                        |
+    |  - Interacts with user                        |
+    |  - Gathers & processes fitness data           |
+    |  - Triggers Agent 2 for complex tasks        |
+    +------------------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  Agent 2 (browser-use-webui)                   |
+    |  - Runs advanced AI computations              |
+    |  - Returns personalized workout data          |
+    +------------------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    | Move-to-Earn (M2E) Contract Interaction       |
+    |  - Users log workouts                         |
+    |  - Rewards based on streaks                   |
+    |  - Staking mechanism for challenges           |
+    |  - AI-generated workout challenges            |
+    +------------------------------------------------+
+                           |
+                           v
+    +------------------------------------------------+
+    |  AI Companion Engagement     ELIZA             |
+    |  - "David Goggins" (HIIT & endurance)          |
+    |  - "Lazar Angelo" (Strength & muscle)        |
+    |  - AI-generated fan battles & motivation      |
+    |  - AI fitness duels between user avatars     |
+    +------------------------------------------------+
+            
 
 
 ## Getting Started 🚀
